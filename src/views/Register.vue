@@ -47,11 +47,19 @@ export default {
   methods: {
     register: function () {
       let data = {
+
         email: this.email,
         password: this.password,
+
       };
       this.$store.dispatch(authActionTypes.REGISTER, data);
     },
   },
 };
 </script>
+
+<style>
+body{
+  background-color: aqua;
+}
+</style>

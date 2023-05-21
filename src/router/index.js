@@ -40,6 +40,14 @@ const routes = [
     name: routeInfo.NotFound.name,
     component: () => routeInfo.NotFound.component,
   },
+  {
+    path: routeInfo.Users.path,  //одключаем роутинг нашей новой страницы
+    name: routeInfo.Users.name,
+    component: () => routeInfo.Users.component,
+    meta: {
+      middleware: [authorized],
+    },
+  },
 ];
 
 const router = createRouter({

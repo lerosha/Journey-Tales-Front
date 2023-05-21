@@ -1,11 +1,12 @@
-import myMmDbApi from "../../../api/myMmDbApi";
+//Правим в другом классе action переименнованный метод обращения к апи.
+import mainDbApi from "../../../api/mainDbApi"; //мутации меняются через экшены то есть методы то есть коммиты, а представление то есть вью меняется после этого круга приколдесного
 import routeInfo from "../../../router/routeInfo";
 import { mutations as mutationTypes, actions as actionTypes } from "./types";
 import router from "../../../router";
 
 export default {
   [actionTypes.AUTH_REQUEST]({ commit }, data) {
-    myMmDbApi()
+    mainDbApi()
       .auth(data)
       .then((result) => {
         commit(mutationTypes.SET_AUTH_TOKEN, result.data);
@@ -20,7 +21,7 @@ export default {
       });
   },
   [actionTypes.REGISTER]({ commit }, data) {
-    myMmDbApi()
+    mainDbApi()
       .register(data)
       .then((result) => {
         commit(mutationTypes.FIRST, result);
