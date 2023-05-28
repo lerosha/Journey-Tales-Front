@@ -48,6 +48,46 @@ const routes = [
       middleware: [authorized],
     },
   },
+  {
+    path: routeInfo.User.path,
+    name: routeInfo.User.name,
+    component: () => routeInfo.User.component,
+    meta: {
+      middleware: [authorized],
+    },
+  },
+  {
+    path: routeInfo.Lists.path,
+    name: routeInfo.Lists.name,
+    component: () => routeInfo.Lists.component,
+    meta: {
+      middleware: [authorized],
+    },
+  },
+  {
+    path: routeInfo.List.path,
+    name: routeInfo.List.name,
+    component: () => routeInfo.List.component,
+    meta: {
+      middleware: [authorized],
+    },
+  },
+  {
+    path: routeInfo.Notes.path,
+    name: routeInfo.Notes.name,
+    component: () => routeInfo.Notes.component,
+    meta: {
+      middleware: [authorized],
+    },
+  },
+  {
+    path: routeInfo.Note.path,
+    name: routeInfo.Note.name,
+    component: () => routeInfo.Note.component,
+    meta: {
+      middleware: [authorized],
+    },
+  },
 ];
 
 const router = createRouter({

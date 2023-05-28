@@ -1,8 +1,12 @@
 <template>
     <div>
       <li v-for="(user, index) in users" :key="user.id">
-        {{ index + 1 }}. Пользователь: {{ user.email }}, Дата создания
-        {{ user.createdOn }}
+        <div>
+        <router-link :to="{ name: 'User', params: { id: user.id } }"
+          >Перейти</router-link
+        >
+        {{ index + 1 }}. Пользователь: {{ user.email }}
+      </div>
       </li>
     </div>
   </template>
@@ -15,13 +19,12 @@
     name: "UsersView",
     computed: {
       users() {
-        console.log(1);
         const users = this.$store.getters[mainGetterTypes.GET_USERS];
         return users;
       },
     },
     beforeCreate() {
-      this.$store.dispatch(mainActionTypes.FETCH_USERS);
+      this.$store.dispatch(mainActionTypes.FETCH_USERS); //вызов экшена фетч инициирует пуш данных в хранилище
     },
   };
   </script>
