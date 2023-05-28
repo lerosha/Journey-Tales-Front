@@ -1,4 +1,4 @@
-const state = {
+const state = { //стэйт менятеся через мутации
   token: null,
 };
 
